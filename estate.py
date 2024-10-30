@@ -9,6 +9,7 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.style import WD_STYLE_TYPE
 from docx.enum.text import WD_TAB_ALIGNMENT,WD_PARAGRAPH_ALIGNMENT
 import sys
+import os
 import datetime
 from datetime import date
 import mysql.connector
@@ -922,6 +923,7 @@ class Main(QMainWindow, real_estateUI):
         
         #p.paragraph_format.alignment = WD_PARAGRAPH_ALIGNMENT.RIGHT        
         document.save('egarat.docx')
+        os.startfile('egarat.docx')
         QMessageBox.warning(self, 'نسخ بيانات', 'تم نسخ البيانات في ملف: egarat.docx بنجاح', QMessageBox.Ok)
         return
 
@@ -1242,6 +1244,7 @@ class Main(QMainWindow, real_estateUI):
         bidi_text = bidi.algorithm.get_display(band_13)        
         p = document.add_paragraph(bidi_text)        
         document.save('tamleek.docx')
+        os.startfile('tamleek.docx')
         QMessageBox.warning(self, 'نسخ بيانات', 'تم نسخ البيانات في ملف: tamleek.docx بنجاح', QMessageBox.Ok)
         return
 
